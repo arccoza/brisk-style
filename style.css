@@ -14,6 +14,8 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   outline: none;
 }
 
+/*raspberry: #EC0868*/
+
 .switch, .switch--off {
   position: relative;
   /*font-size: 15em;*/
@@ -36,4 +38,16 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   background-color: #007FFF;
   background-image: radial-gradient(closest-side circle, rgba(255, 255, 255, 1) calc(100% - 0.13em), rgba(255, 255, 255, 0) calc(100% - 0.13em + 1px));
   /*border: 0.2em solid rgba(0, 127, 255, 0.3);*/
+}
+
+.checkbox {
+  position: relative;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: #dedede;
+  border-radius: 0.4em;
+}
+
+.checkbox--on, .checkbox:checked {
+  background-color: #007FFF;
 }
