@@ -14,7 +14,7 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   outline: none;
 }
 
-.switch {
+.switch, .switch--off {
   position: relative;
   /*font-size: 15em;*/
   /*font-size: 10px;*/
@@ -28,7 +28,6 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   transition: background-position 0.4s;
 }
 
-.switch:checked {
+.switch--on, .switch:checked {
   background-position: 0.625em center;
-  /*background-image: radial-gradient(closest-side circle at 1.75em, rgba(110, 0, 255, 1) calc(100% - 0.1em), rgba(110, 0, 255, 0) calc(100% - 0.1em + 1px));*/
 }
