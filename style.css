@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox].radiobox {
+  -webkit-appearance: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1em;
+  outline: none;
+}
+
+.switch {
+  position: relative;
+  /*font-size: 15em;*/
+  /*font-size: 10px;*/
+  width: 2.5em;
+  height: 1.2em;
+  /*background-image: radial-gradient(closest-side circle, rgba(110, 0, 255, 1) calc(100% - 1px), rgba(110, 0, 255, 0));*/
+  /*background-image: radial-gradient(closest-side circle at 0.45em, rgba(110, 0, 255, 1) calc(100% - 0.1em), rgba(110, 0, 255, 0) calc(100% - 0.1em + 1px));*/
+  background-image: radial-gradient(closest-side circle, rgba(110, 0, 255, 1) calc(100% - 0.1em), rgba(110, 0, 255, 0) calc(100% - 0.1em + 1px));
+  background-repeat: no-repeat;
+  background-position: -0.625em center;
+  /*background-origin: content-box;*/
+  /*padding: 0.1em;*/
+  border-radius: 1000px;
+  border: 0.14em solid rgba(110, 0, 255, 1);
+  transition: background-position 0.4s;
+}
+
+.switch:checked {
+  background-position: 0.625em center;
+  /*background-image: radial-gradient(closest-side circle at 1.75em, rgba(110, 0, 255, 1) calc(100% - 0.1em), rgba(110, 0, 255, 0) calc(100% - 0.1em + 1px));*/
+}
