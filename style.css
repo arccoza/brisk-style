@@ -22,8 +22,9 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   /*font-size: 10px;*/
   width: 2.5em;
   height: 1.2em;
-  background-color: #dedede;
-  background-image: radial-gradient(closest-side circle, rgba(255, 255, 255, 1) calc(100% - 0.13em), rgba(255, 255, 255, 0) calc(100% - 0.13em + 1px));
+  /*background-color: rgba(128, 128, 128, 0.4);*/
+  box-shadow: 0 0 0 0.1em inset rgba(140, 42, 226, 0.4);
+  background-image: radial-gradient(closest-side circle, rgba(140, 42, 226, 0.4) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px));
   background-repeat: no-repeat;
   background-position: -0.625em center;
   border-radius: 1000px;
@@ -33,11 +34,21 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   transition: background-color 0.4s, background-position 0.4s;
 }
 
+/*.switch:focus {
+  box-shadow: 0 0 0px 0.2em rgba(0, 127, 255, 0.3);
+}*/
+
 .switch--on, .switch:checked {
+  box-shadow: none;
   background-position: 0.625em center;
-  background-color: #007FFF;
-  background-image: radial-gradient(closest-side circle, rgba(255, 255, 255, 1) calc(100% - 0.13em), rgba(255, 255, 255, 0) calc(100% - 0.13em + 1px));
+  background-color: rgba(140, 42, 226, 0.4);
+  background-image: radial-gradient(closest-side circle, rgba(140, 42, 226, 1) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px));
   /*border: 0.2em solid rgba(0, 127, 255, 0.3);*/
+}
+
+.busy.busy.busy {
+  /*box-shadow: 0 0 0 0.4em inset #c4c4c4;*/
+  background-image: linear-gradient(to right, rgba(140, 42, 226, 1) 0% 50%, rgba(140, 42, 226, 0))
 }
 
 .checkbox {
