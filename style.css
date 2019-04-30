@@ -23,8 +23,8 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   width: 2.5em;
   height: 1.2em;
   /*background-color: rgba(128, 128, 128, 0.4);*/
-  box-shadow: 0 0 0 0.1em inset rgba(140, 42, 226, 0.4);
-  background-image: radial-gradient(closest-side circle, rgba(140, 42, 226, 0.4) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px));
+  box-shadow: 0 0 0 0.1em inset rgba(103, 61, 171, 0.2);
+  background-image: radial-gradient(closest-side circle, rgba(103, 61, 171, 0.4) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px));
   background-repeat: no-repeat;
   background-position: -0.625em center;
   border-radius: 1000px;
@@ -41,14 +41,14 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
 .switch--on, .switch:checked {
   box-shadow: none;
   background-position: 0.625em center;
-  background-color: rgba(140, 42, 226, 0.4);
-  background-image: radial-gradient(closest-side circle, rgba(140, 42, 226, 1) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px));
+  background-color: rgba(140, 42, 226, 0.2);
+  background-image: radial-gradient(closest-side circle, rgba(103, 61, 171, 1) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px));
   /*border: 0.2em solid rgba(0, 127, 255, 0.3);*/
 }
 
 .busy.busy.busy {
   /*box-shadow: 0 0 0 0.4em inset #c4c4c4;*/
-  background-image: linear-gradient(to right, rgba(140, 42, 226, 1) 0% 50%, rgba(140, 42, 226, 0))
+  background-image: linear-gradient(to right, rgba(103, 61, 171, 1) 0% 50%, rgba(140, 42, 226, 0))
 }
 
 .checkbox {
@@ -60,15 +60,15 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   background-repeat: no-repeat;
   /*background-color: #dedede;*/
   /*border: 0.14em solid rgba(140, 42, 226, 0.6);*/
-  box-shadow: 0 0 0 0.1em inset rgba(140, 42, 226, 0.6);
+  box-shadow: 0 0 0 0.1em inset rgba(103, 61, 171, 0.2);
   border-radius: 0.4em;
   transition: background-size 0.3s, background-color 0.2s;
 }
 
 .checkbox--on, .checkbox:checked {
   box-shadow: none;
-  background-color: rgba(140, 42, 226, 0.4);
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%238c2ae2" d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
-  /*box-shadow: 0 0 0 100px inset rgba(140, 42, 226, 1);*/
+  background-color: rgba(103, 61, 171, 0.2);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="rgba(103, 61, 171, 1)" d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+  /*box-shadow: 0 0 0 100px inset rgba(103, 61, 171, 1);*/
   background-size: 0.7em;
 }
