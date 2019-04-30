@@ -1,0 +1,10 @@
+{
+  "name": "brisk-ui",
+  "version": "0.0.1",
+  "description": "Beautiful, lightweight UI components",
+  "main": "index.js",
+  "repository": "github.com/arccoza/brisk-ui",
+  "author": "Adrien <adrien@arccoza.com>",
+  "license": "MIT",
+  "private": true
+}
