@@ -6,5 +6,9 @@
   "repository": "github.com/arccoza/brisk-ui",
   "author": "Adrien <adrien@arccoza.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "color": "^3.1.1",
+    "kase": "^0.10.0"
+  }
 }
