@@ -36,14 +36,14 @@ Theme.prototype.switch = function({active=false, size=1, strokeColor=null, strok
     backgroundPosition: `-${togglePos}em center`,
     borderRadius: '100000px',
     backgroundOrigin: 'padding-box',
-    transition: 'background-color 0.4s, background-position 0.4s',
+    transition: 'background-color 0.4s, background-position 0.4s, box-shadow 0.4s',
   }
 
   var active = {
-    boxShadow: 'none',
+    boxShadow: `0 0 0 ${this.lineLight}em inset ${this.lineColor.alpha(0).rgb()}`,
     backgroundPosition: `${togglePos}em center`,
     backgroundColor: this.accentMuted.rgb(),
-    backgroundImage: `radial-gradient(closest-side circle, rgba(103, 61, 171, 1) calc(100% - 0.23em), rgba(255, 255, 255, 0) calc(100% - 0.23em + 1px))`,
+    backgroundImage: `radial-gradient(closest-side circle, ${this.accent.rgb()} ${toggleSize}em, ${this.accent.alpha(0).rgb()} calc(${toggleSize}em + 1px))`,
   }
 
   return base
