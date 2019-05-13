@@ -22,7 +22,7 @@ function Theme() {
   this.lineBold = 0.16
 }
 
-Theme.prototype.switch = function({active=false, size=1, strokeColor=null, strokeWidth=1, fill=null}={}) {
+Theme.prototype.switch = function({isActive=false, size=1, strokeColor=null, strokeWidth=1, fill=null}={}) {
   var width = 2.5, height = 1.2
   var toggleGap = 0.23, toggleSize = height / 2 - toggleGap, togglePos = width / 2 - toggleSize - toggleGap
 
@@ -46,7 +46,7 @@ Theme.prototype.switch = function({active=false, size=1, strokeColor=null, strok
     backgroundImage: `radial-gradient(closest-side circle, ${this.accent.rgb()} ${toggleSize}em, ${this.accent.alpha(0).rgb()} calc(${toggleSize}em + 1px))`,
   }
 
-  return base
+  return isActive ? active : base
 }
 
 var th = new Theme()
