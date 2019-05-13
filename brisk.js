@@ -19,7 +19,7 @@ function Theme() {
   this.lineColor = Color('#CCC')
   this.lineLight = 0.06
   this.lineRegular = 0.1
-  this.lineBold = 0.2
+  this.lineBold = 0.16
 }
 
 Theme.prototype.switch = function({active=false, size=1, strokeColor=null, strokeWidth=1, fill=null}={}) {
