@@ -6,12 +6,13 @@ html {
   font-size: 16px;
 }
 
-input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox].radiobox {
+input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox].radiobox, button {
   -webkit-appearance: none;
   padding: 0;
   margin: 0;
   font-size: inherit;
   outline: none;
+  border: none;
 }
 
 /*raspberry: #EC0868*/
@@ -112,4 +113,49 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="rgba(103, 61, 171, 1)" d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
   /*box-shadow: 0 0 0 100px inset rgba(103, 61, 171, 1);*/
   background-size: 0.7em;
+}
+
+.button, .button__primary, .button-hollow, .button-hollow__primary {
+  background-color: #eee;
+  color: #888;
+  fill: #888;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.4em 0.8em;
+  border-radius: 0.4em;
+  transition: background-color 0.15s, color 0.15s, fill 0.15s;
+}
+
+.button__primary {
+  background-color: rgba(103, 61, 171, 0.8);
+  color: #fff;
+}
+
+.button-hollow, .button-hollow__primary {
+  background-color: transparent;
+  color: #888;
+  box-shadow: 0 0 0px 0.125em inset #eee;
+}
+
+.button-hollow__primary {
+  color: rgba(103, 61, 171, 0.8);
+  box-shadow: 0 0 0px 0.125em inset rgba(103, 61, 171, 0.8);
+}
+
+.button-hollow:active, .button-hollow__primary:active {
+  background-color: #eee;
+  color: #888;
+  box-shadow: none;
+}
+
+.button-hollow__primary:active {
+  background-color: rgba(103, 61, 171, 0.8);
+  color: #fff;
+}
+
+.button:active, .button__primary:active {
+  background-color: #444;
+  color: #eee;
 }
