@@ -159,3 +159,26 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   background-color: #444;
   color: #eee;
 }
+
+
+.bubble {
+  position: relative;
+  background-color: #eee;
+  border-radius: 0.4em;
+  padding: 0.4em 0.4em;
+  
+}
+
+.bubble:after {
+  content: '';
+  position: absolute;
+  top: calc(-1em + 1px);
+  left: 0.4em;
+  display: block;
+  width: calc(100% - 0.8em);
+  height: 1em;
+  background-image: url('data:image/svg+xml;utf8,<svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.4866 1.65176C9.6921 0.769002 8.30789 0.769003 7.51341 1.65176L3.00414 6.66207C3.00393 6.6623 3.00434 6.66184 3.00414 6.66207L0 10H18L14.9965 6.66276C14.9963 6.66253 14.9967 6.66299 14.9965 6.66276L10.4866 1.65176Z" fill="%23eee"/></svg>');
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+  background-size: contain;
+}
