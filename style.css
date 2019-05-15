@@ -50,43 +50,45 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   box-shadow: none;
   background-color: #eee;
   background-image:
-    radial-gradient(closest-side circle, #ccc calc(15%), rgba(255, 255, 255, 0) calc(15% + 1px)),
-    radial-gradient(closest-side circle, #ccc calc(15%), rgba(255, 255, 255, 0) calc(15% + 1px)),
-    radial-gradient(closest-side circle, #ccc calc(15%), rgba(255, 255, 255, 0) calc(15% + 1px));
+    radial-gradient(closest-side circle, #ccc calc(25%), rgba(255, 255, 255, 0) calc(25% + 1px)),
+    radial-gradient(closest-side circle, #ccc calc(25%), rgba(255, 255, 255, 0) calc(25% + 1px)),
+    radial-gradient(closest-side circle, #ccc calc(25%), rgba(255, 255, 255, 0) calc(25% + 1px));
   background-repeat: no-repeat;
-  background-size: 200% 200%;
-  /*background-position: 70% 45%, 50% 45%, 30% 45%;*/
-  background-position: 75% 45%, 50% 45%, 25% 45%;
+  background-size: 1em 1em;
+  background-position: calc(50% - 0.6em), 50%, calc(50% + 0.6em);
   animation-duration: 1.5s;
-  animation-name: dot-bounce;
+  /*animation-name: tridot-pulse;*/
   animation-iteration-count: infinite;
   /*animation-fill-mode: forwards;*/
 }
 
-@keyframes dot-pulse {
+@keyframes tridot-pulse {
+  40% {
+    background-size: 1em 1em;
+  }
   55% {
-    background-position: 75% 50%, 50% 45%, 25% 45%;
-    background-size: 200% 275%, 200% 200%, 200% 200%;
+    background-size: 2em 2em, 1em 1em, 1em 1em;
   }
   70% {
-    background-position: 75% 45%, 50% 50%, 25% 45%;
-    background-size: 200% 200%, 200% 275%, 200% 200%;
+    background-size: 1em 1em, 2em 2em, 1em 1em;
   }
   85% {
-    background-position: 75% 45%, 50% 45%, 25% 50%;
-    background-size: 200% 200%, 200% 200%, 200% 275%;
+    background-size: 1em 1em, 1em 1em, 2em 2em;
   }
 }
 
-@keyframes dot-bounce {
-  25% {
-    background-position: 75% 65%, 50% 45%, 25% 45%;
+@keyframes tridot-bounce {
+  40% {
+    background-position: calc(50% - 0.6em), 50%, calc(50% + 0.6em);
   }
-  50% {
-    background-position: 75% 45%, 50% 65%, 25% 45%;
+  55% {
+    background-position: calc(50% - 0.6em) calc(50% - 0.3em), 50%, calc(50% + 0.6em);
   }
-  75% {
-    background-position: 75% 45%, 50% 45%, 25% 65%;
+  70% {
+    background-position: calc(50% - 0.6em), 50% calc(50% - 0.3em), calc(50% + 0.6em);
+  }
+  85% {
+    background-position: calc(50% - 0.6em), 50%, calc(50% + 0.6em) calc(50% - 0.3em);
   }
 }
 
