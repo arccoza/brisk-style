@@ -125,7 +125,7 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   text-align: center;
   padding: 0.4em 0.8em;
   border-radius: 0.4em;
-  transition: background-color 0.15s, color 0.15s, fill 0.15s;
+  transition: background-color 0.15s, color 0.15s, fill 0.15s, box-shadow 0.15s;
 }
 
 .button__primary {
