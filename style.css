@@ -166,7 +166,7 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   background-color: #eee;
   border-radius: 0.4em;
   padding: 0.4em 0.4em;
-  
+  box-shadow: 0 0.1em 1em 0 hsla(0,0%,48.2%,.05);
 }
 
 .bubble:after {
