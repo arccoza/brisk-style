@@ -182,3 +182,39 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
   background-position: 50% 100%;
   background-size: contain;
 }
+
+.progress-bar {
+  position: relative;
+  /*font-size: 10em;*/
+  min-width: 1em;
+  height: 0.5em;
+  background-color: #eee;
+  background-image: linear-gradient(rgba(103, 61, 171, 0.8), rgba(103, 61, 171, 0.8));
+  background-repeat: no-repeat;
+  /*background-size: 200%;
+  background-position: 180%;*/
+  background-origin: content-box;
+  padding-right: 80%;
+  padding-left: 10%;
+  border-radius: 100000px;
+  box-shadow: 0 0 0 0.125em inset #eee, 0 0 0 1px inset #eee, 0 0 0 1px inset #eee;
+}
+
+.progress-bar:before, .progress-bar:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -0.25em;
+  background-color: rgba(103, 61, 171, 0.8);
+  width: 1em;
+  height: 1em;
+  border-radius: 100000px;
+}
+
+.progress-bar:before {
+  left: calc(10% - 0.5em);
+}
+
+.progress-bar:after {
+  right: 80%;
+}
