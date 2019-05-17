@@ -218,3 +218,9 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
 .progress-bar:after {
   right: 80%;
 }
+
+.gridlines {
+  width: 10em;
+  height: 10em;
+  background-image: repeating-linear-gradient(transparent 0.9em, #eee 1em, #eee 1.1em, transparent 1.1em, transparent 2em), repeating-linear-gradient(90deg, #eee, #eee 0.1em, transparent 0.1em, transparent 1em);
+}
