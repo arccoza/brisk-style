@@ -201,8 +201,10 @@ input[type=checkbox].switch, input[type=checkbox].checkbox, input[type=checkbox]
 }
 
 .progress-bar:before, .progress-bar:after {
-  content: '';
-  display: block;
+  content: attr(handle-icon, '');
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   top: -0.25em;
   background-color: rgba(103, 61, 171, 0.8);
