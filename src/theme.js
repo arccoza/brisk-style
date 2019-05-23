@@ -13,7 +13,7 @@ function Theme() {
   this.text = [100, 400, 600]
   this.stroke = [0.0625, 0.125, 0.25]
   this.roundness = [0.5, 1, 100000]
-  this.elevation = [0, 2, 8]  // For box-shadow
+  this.elevation = [2, 4, 12]  // For box-shadow
   
   this.accentA = Color('rgba(103, 61, 171, 1)')
   this.accentB = this.accentA.alpha(0.67)
