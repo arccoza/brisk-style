@@ -1,5 +1,6 @@
 'use strict'
 const undefined = void 0
+const {kase} = require('kase')
 
 
 function toCss(obj) {
