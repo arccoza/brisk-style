@@ -9,7 +9,7 @@ function button({accent=false, stroke=false, fill=false, outline=false}={}) {
   outline = outline ? this.accent[2] : ''
   stroke += outline ? `, 0 0 0 ${this.stroke[2]}em ${outline}` : ''
 
-  return {
+  var style = {
     position: 'relative',
     backgroundColor: fill,
     display: 'inline-flex',
@@ -23,6 +23,8 @@ function button({accent=false, stroke=false, fill=false, outline=false}={}) {
     boxShadow: stroke,
     transition: 'background-color 0.15s, color 0.15s, fill 0.15s, box-shadow 0.15s',
   }
+
+  return this.css ? this.css(style) : style
 }
 
 

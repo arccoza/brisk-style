@@ -3,10 +3,12 @@ const undefined = void 0
 const Color = require('color')
 
 
-function Theme() {
+function Theme({css=null}={}) {
   var accent = Color('rgba(103, 61, 171, 1)'), ink = Color('#444')
   var canvas = Color('#FFF')
 
+  this.css = css
+  
   this.accent = [accent, accent.alpha(0.67), accent.alpha(0.4)]
   this.ink = [ink, ink.lighten(0.2), ink.lighten(0.4)]
   this.canvas = [canvas, canvas.darken(0.2), canvas.darken(0.4)]
