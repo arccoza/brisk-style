@@ -16,7 +16,6 @@ function Button(props) {
   return jsx('div', {css: th.button({stroke:true})}, 'hello')
 }
 
-var butt = React.createElement('button', 'oi')
 
 ReactDOM.render(
   Button(),
