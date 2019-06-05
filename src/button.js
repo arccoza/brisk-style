@@ -4,8 +4,8 @@ const undefined = void 0
 
 function button({accent=false, stroke=false, fill=false, outline=false}={}) {
   fill = fill ? accent ? this.accent[0] : this.ink[2] : ''
-  stroke = stroke ? accent ? this.accent[1] : this.ink[1] : ''
-  stroke = `0 0 0 ${this.stroke[0]}rem ${stroke} inset`
+  stroke = stroke ? accent ? this.ink[1] : this.ink[1] : ''
+  stroke = stroke && `0 0 0 ${this.stroke[0]}rem ${stroke} inset`
   outline = outline ? this.accent[2] : ''
   stroke += outline ? `, 0 0 0 ${this.stroke[2]}em ${outline}` : ''
   var color = (fill ? this.canvas[0] : accent ? this.accent[0] : this.ink[0]).toString()
