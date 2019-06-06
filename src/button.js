@@ -18,7 +18,9 @@ function button({accent=false, stroke=false, fill=false, outline=false}={}) {
     textAlign: 'center',
     padding: '0.4em 0.8em',
     borderRadius: '0.4em',
-    fontWeight: this.text[2],
+    // fontWeight: this.text[2],
+    userSelect: 'none',
+    cursor: 'pointer',
     transition: 'background-color 0.15s, color 0.15s, fill 0.15s, box-shadow 0.15s',
   }
 
