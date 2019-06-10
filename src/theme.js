@@ -21,5 +21,9 @@ function Theme({css=null}={}) {
   
 }
 
+Theme.prototype.shade = function shade({shade, accent}) {
+  return accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade]
+}
+
 
 module.exports = Theme
