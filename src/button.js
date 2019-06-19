@@ -21,7 +21,6 @@ function button({stroke=0, fill=0, face=0, outline=0, elevation=0, roundness=0}=
     justifyContent: 'center',
     textAlign: 'center',
     padding: '0.4em 0.8em',
-    // fontWeight: this.text[2],
     userSelect: 'none',
     cursor: 'pointer',
     transition: 'background-color 0.15s, color 0.15s, fill 0.15s, box-shadow 0.15s',
