@@ -2,13 +2,17 @@
 const undefined = void 0
 
 
-function button({accent=false, stroke=false, fill=false, outline=false}={}) {
-  fill = fill ? accent ? this.accent[0] : this.ink[2] : ''
-  stroke = stroke ? accent ? this.ink[1] : this.ink[1] : ''
-  stroke = stroke && `0 0 0 ${this.stroke[0]}rem ${stroke} inset`
-  outline = outline ? this.accent[2] : ''
-  stroke += outline ? `, 0 0 0 ${this.stroke[2]}em ${outline}` : ''
-  var color = (fill ? this.canvas[0] : accent ? this.accent[0] : this.ink[0]).toString()
+function button({stroke=0, fill=0, face=0, outline=0, elevation=0, roundness=0}={}) {
+  stroke = stroke ? `0 0 0 ${this.strokeWeight[stroke.weight || 1]}rem ${this.shade(stroke)} inset` : ''
+  outline = outline ? `0 0 0 ${this.strokeWeight[outline.weight || 1]}rem ${this.shade(outline)}` : ''
+  var elevationVal = this.elevation[elevation.value]
+  elevation = elevation ? `0 ${elevationVal}rem ${elevationVal+elevationVal}rem ${this.shade(elevation)}` : ''
+  stroke = [stroke, outline, elevation].reduce((s, v) => (v ? `${s}, ${v}` : s))
+  var borderRadius = `${this.roundness[roundness]}rem`
+  fill = fill ? this.shade(fill) : ''
+  var fontWeight = face && face.weight ? this.fontWeight[face.weight] : null
+  var color = face ? this.shade(face).toString() : ''
+
 
   var style = {
     position: 'relative',
@@ -17,7 +21,6 @@ function button({accent=false, stroke=false, fill=false, outline=false}={}) {
     justifyContent: 'center',
     textAlign: 'center',
     padding: '0.4em 0.8em',
-    borderRadius: '0.4em',
     // fontWeight: this.text[2],
     userSelect: 'none',
     cursor: 'pointer',
@@ -25,8 +28,10 @@ function button({accent=false, stroke=false, fill=false, outline=false}={}) {
   }
 
   var diff = {
-    backgroundColor: fill,
+    backgroundColor: fill.toString(),
     color,
+    fontWeight,
+    borderRadius,
     boxShadow: stroke,
   }
 
