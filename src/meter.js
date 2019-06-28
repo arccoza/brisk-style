@@ -18,10 +18,10 @@ function meter(props) {
     backgroundRepeat: 'no-repeat',
   }
 
-  var size = x2 - x1, pos = x1 / (1 - size)
+  var len = x2 - x1, pos = x1 / (1 - len)
   var measure = {
     backgroundPosition: `${pos * 100}% center`,
-    backgroundSize: `${size * 100}% 100%`,
+    backgroundSize: `${len * 100}% 100%`,
   }
 
   Object.assign(style, more, measure)
