@@ -1,5 +1,6 @@
 'use strict'
 const undefined = void 0
+const {dataUrl} = require('./util.js')
 const box = require('./box.js')
 
 
@@ -29,14 +30,12 @@ function meter(props) {
 }
 
 function bgSvg({rem, color, weight, x1=0, x2=1, r=1}) {
-return `
-url('data:image/svg+xml;utf8,
+return dataUrl(`
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="${weight}rem"
   style="font-size:${rem}px;">
   <rect x="${x1 * 100}%" width="${(x2 - x1) * 100}%" height="100%" rx="${Math.min(r, weight / 2)}rem" fill="${color}" />
 </svg>
-')
-`
+`, {type: 'svg', enc:'base64'})
 }
 
 module.exports = meter
