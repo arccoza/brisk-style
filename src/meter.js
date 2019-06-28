@@ -28,41 +28,6 @@ function meter(props) {
   return this.css ? this.css(style) : style
 }
 
-// function bgSvg() {
-// return `
-// url('data:image/svg+xml;utf8,
-// <svg xmlns="http://www.w3.org/2000/svg" width="100" height="10"
-//   style="padding:0 0em; overflow:visible;" overflow="visible">
-//   <svg x="1em" overflow="visible">
-//     <rect id="r" x="0em" stroke="black" fill="green" width="100%" height="100%"/>
-//   </svg>
-// </svg>
-// ')
-// `
-// }
-
-// function bgSvg({color, weight}) {
-// return `
-// url('data:image/svg+xml;utf8,
-// <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-//   style="">
-//   <style>
-//     /* <![CDATA[ */
-//     line {
-//       stroke: ${color};
-//       stroke-width: ${weight}em;
-//       stroke-dasharray: 68% 136%;
-//       stroke-dashoffset: -0%;
-//       stroke-linecap: round;
-//     }
-//     /* ]]> */
-//   </style>
-//   <line x1="0" y1="50%" x2="100%" y2="50%"/>
-// </svg>
-// ')
-// `
-// }
-
 function bgSvg({rem, color, weight, x1=0, x2=1, r=1}) {
 return `
 url('data:image/svg+xml;utf8,
