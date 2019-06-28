@@ -4,23 +4,27 @@ const box = require('./box.js')
 
 
 function meter(props) {
-  var style = box.call(this, props)
-  style.backgroundImage = bgSvg({rem: this.rem, color:style.color, weight:1, x1:0, x2:0.5, r:1})
+  var style = box.call(this, props), {x1=0, x2=1} = props
+  style.backgroundImage = `repeating-linear-gradient(90deg, transparent 0%, transparent calc(10% - 1px), rgba(255,0,0,0.5) 10%), `
+  style.backgroundImage += bgSvg({rem: this.rem, color:style.color, weight:1, x1:0, x2:1, r:0})
   console.log(style.backgroundImage.replace(/[\n\r]/g, ''))
 
   var more = {
     position: 'relative',
     width: '200px',
     height: '1em',
-    // padding: '0 0.5em',
     boxSizing: 'border-box',
     backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center',
-    // backgroundSize: '75%',
-    // backgroundOrigin: 'content-box',
   }
 
-  Object.assign(style, more)
+  var size = x2 - x1, pos = x1 / (1 - size)
+
+  var diff = {
+    backgroundPosition: `center, ${pos * 100}% center`,
+    backgroundSize: `100%, ${size * 100}% 100%`,
+  }
+
+  Object.assign(style, more, diff)
   return this.css ? this.css(style) : style
 }
 
