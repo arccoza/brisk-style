@@ -19,13 +19,12 @@ function meter(props) {
   }
 
   var size = x2 - x1, pos = x1 / (1 - size)
-
-  var diff = {
+  var measure = {
     backgroundPosition: `${pos * 100}% center`,
     backgroundSize: `${size * 100}% 100%`,
   }
 
-  Object.assign(style, more, diff)
+  Object.assign(style, more, measure)
   return this.css ? this.css(style) : style
 }
 
