@@ -64,7 +64,7 @@ return `
 url('data:image/svg+xml;utf8,
 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="${weight}rem"
   style="font-size:${rem}px;">
-  <rect x="${x1 * 100}%" width="${(x2 - x1) * 100}%" height="100%" rx="${r * weight / 2}rem" fill="${color}" />
+  <rect x="${x1 * 100}%" width="${(x2 - x1) * 100}%" height="100%" rx="${Math.min(r, weight / 2)}rem" fill="${color}" />
 </svg>
 ')
 `
