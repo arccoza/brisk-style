@@ -3,6 +3,7 @@ const undefined = void 0
 import Theme from '../../src/theme'
 import button from '../../src/button'
 import meter from '../../src/meter'
+import toggle from '../../src/toggle'
 import {css, jsx} from '@emotion/core'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -10,20 +11,25 @@ import ReactDOM from 'react-dom'
 
 Theme.prototype.button = button
 Theme.prototype.meter = meter
+Theme.prototype.toggle = toggle
 
-var th = new Theme({css})
+var th = new Theme()
 
 
 function Button(props) {
-  return jsx('div', {css: th.button({stroke:{shade:1}, fill:{shade:3}, face: {shade:1, accent:0}, elevation:{shade:2, value:3}, roundness:2})}, 'hello')
+  return jsx('div', {css: css(th.button({stroke:{shade:1}, fill:{shade:3}, face: {shade:1, accent:0}, elevation:{shade:2, value:3}, roundness:2}))}, 'hello')
 }
 
 function Meter(props) {
-  return jsx('div', {css: th.meter({stroke:{shade:0}, fill:{shade:3, accent:1, weight:1}, face: {shade:1, accent:1}, roundness:2})})
+  return jsx('div', {css: css(th.meter({x1: 0.3, x2: 0.9, stroke:{shade:0}, fill:{shade:3, accent:1, weight:3}, face: {shade:1, accent:1, weight:2}, roundness:2}))})
+}
+
+function Toggle(props) {
+  return jsx('div', {css: css(th.toggle())})
 }
 
 
 ReactDOM.render(
-  Meter(),
+  Toggle(),
   document.getElementById('root')
 )
