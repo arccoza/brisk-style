@@ -16,16 +16,21 @@ Theme.prototype.toggle = toggle
 var th = new Theme()
 
 
-function Button(props) {
+function Button(props={}) {
   return jsx('div', {css: css(th.button({stroke:{shade:1}, fill:{shade:3}, face: {shade:1, accent:0}, elevation:{shade:2, value:3}, roundness:2}))}, 'hello')
 }
 
-function Meter(props) {
+function Meter(props={}) {
   return jsx('div', {css: css(th.meter({x1: 0.3, x2: 0.9, stroke:{shade:0}, fill:{shade:3, accent:1, weight:3}, face: {shade:1, accent:1, weight:2}, roundness:2}))})
 }
 
-function Toggle(props) {
-  return jsx('div', {css: css(th.toggle())})
+function Toggle(props={}) {
+  return jsx('input', {
+    css: css(th.toggle()),
+    type: 'checkbox',
+    defaultChecked:props.active,
+    onClick: ev => props.update({active: !props.active})
+  })
 }
 
 
