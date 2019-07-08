@@ -27,8 +27,7 @@ Theme.prototype.shade = function shade({shade, accent}) {
 
 Theme.prototype.colorAndWeight = function colorAndWeight({shade, accent, weight}) {
   return {
-    accent,
-    shade: accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade],
+    color: accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade],
     weight: this.strokeWeight[weight],
   }
 }
