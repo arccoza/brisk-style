@@ -4,8 +4,8 @@ const Color = require('color')
 
 
 function Theme({css=null}={}) {
-  var accent = Color('rgba(103, 61, 171, 1)') //#ffca57
-  var canvas = Color('#FFF'), ink = Color('#777')
+  var accent = Color('rgba(103, 61, 171, 1)') //#ffca57, #17BEBB, #EF3E36
+  var canvas = Color('#FFF'), ink = Color('#777') //#2E282A
 
   this.css = css
   
