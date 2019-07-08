@@ -17,7 +17,7 @@ function Theme({css=null}={}) {
   this.ink = ['transparent', ink, ink.lighten(0.45), ink.lighten(0.95)]
   this.canvas = ['transparent', canvas, canvas.darken(0.2), canvas.darken(0.4)]
   this.color =  [0, this.canvas, this.ink, this.accent]
-  this.strokeWeight = [0, 0.0625, 0.125, 0.25, 0.5, 1.25, 2.5]
+  this.weight = [0, 0.0625, 0.125, 0.25, 0.5, 1.25, 2.5]
   this.roundness = [0, 0.25, 0.5, 100000]
   this.elevation = [0, 0.125, 0.25, 0.5]  // For box-shadow
 }
@@ -29,7 +29,7 @@ Theme.prototype.shade = function shade({shade, accent}) {
 Theme.prototype.colorAndWeight = function colorAndWeight({shade, accent, weight}) {
   return {
     color: accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade],
-    weight: this.strokeWeight[weight],
+    weight: this.weight[weight],
   }
 }
 
