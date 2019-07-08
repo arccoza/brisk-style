@@ -29,7 +29,7 @@ function Toggle(props={}) {
     css: css(th.toggle()),
     type: 'checkbox',
     defaultChecked:props.active,
-    onClick: ev => props.update({active: !props.active})
+    onClick: ev => props.update && props.update({active: !props.active})
   })
 }
 
