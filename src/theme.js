@@ -10,8 +10,9 @@ function Theme({css=null}={}) {
   this.css = css
   
   this.rem = 16
-  this.font = ['', 'Roboto', 'Cuprum', 'RobotoMono']
-  this.fontWeight = [0, 100, 300, 600]
+  this.fontMain = ['Roboto', 100, 300, 600]
+  this.fontAlt = ['Cuprum', 100, 300, 600]
+  this.fontMono = ['RobotoMono', 100, 300, 600]
   this.accent = ['transparent', accent, accent.alpha(0.67), accent.alpha(0.4)]
   this.ink = ['transparent', ink, ink.lighten(0.45), ink.lighten(0.95)]
   this.canvas = ['transparent', canvas, canvas.darken(0.2), canvas.darken(0.4)]
