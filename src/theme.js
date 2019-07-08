@@ -11,7 +11,7 @@ function Theme({css=null}={}) {
   
   this.rem = 16
   this.font = ['', 'Roboto', 'Cuprum', 'RobotoMono']
-  this.fontWeight = [0, 100, 400, 600]
+  this.fontWeight = [0, 100, 300, 600]
   this.accent = ['transparent', accent, accent.alpha(0.67), accent.alpha(0.4)]
   this.ink = ['transparent', ink, ink.lighten(0.45), ink.lighten(0.95)]
   this.canvas = ['transparent', canvas, canvas.darken(0.2), canvas.darken(0.4)]
@@ -23,6 +23,24 @@ function Theme({css=null}={}) {
 
 Theme.prototype.shade = function shade({shade, accent}) {
   return accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade]
+}
+
+Theme.prototype.colorAndWeight = function colorAndWeight({shade, accent, weight}) {
+  return {
+    accent,
+    shade: accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade],
+    weight: this.strokeWeight[weight],
+  }
+}
+
+Theme.prototype.parse = function parse(props) {
+  var out = {face: null, fill: null, stroke: null}
+  for (var name in out) {
+    out[name] = this.colorAndWeight(props[name])
+  }
+  out.roundness = this.roundness[props.roundness]
+  out.elevation = this.elevation[props.elevation]
+  return out
 }
 
 
