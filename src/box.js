@@ -3,22 +3,22 @@ const undefined = void 0
 
 
 function box({stroke=0, fill=0, face=0, outline=0, elevation=0, roundness=0}={}) {
-  stroke = stroke ? `0 0 0 ${this.strokeWeight[stroke.weight || 1]}rem ${this.shade(stroke)} inset` : ''
-  outline = outline ? `0 0 0 ${this.strokeWeight[outline.weight || 1]}rem ${this.shade(outline)}` : ''
-  var elevationVal = this.elevation[elevation.value]
-  elevation = elevation ? `0 ${elevationVal}rem ${elevationVal+elevationVal}rem ${this.shade(elevation)}` : ''
-  stroke = [stroke, outline, elevation].reduce((s, v) => (v ? `${s}, ${v}` : s))
-  var borderRadius = `${this.roundness[roundness]}rem`
-  fill = fill ? this.shade(fill) : ''
-  var fontWeight = face && face.weight ? this.fontWeight[face.weight] : null
-  var color = face ? this.shade(face).toString() : ''
+  // console.log(this.parse({stroke, fill, face, outline, elevation, roundness}))
+  var vals = this.parse({stroke, fill, face, outline, elevation, roundness})
+  var color = vals.face && vals.face.color.toString()
+  var backgroundColor = vals.fill && vals.fill.color.toString()
+  var boxShadow = [
+    vals.stroke && `0 0 0 ${vals.stroke.weight || 0}rem ${vals.stroke.color} inset`,
+    vals.outline && `0 0 0 ${vals.outline.weight || 0}rem ${vals.outline.color}`,
+    vals.elevation && `0 ${vals.elevation || 0}rem ${vals.elevation * 2}rem ${'rgba(0,0,0,0.5)'}`,
+  ].filter(v => v).join(',')
+  var borderRadius = `${vals.roundness}rem`
 
   return {
-    backgroundColor: fill.toString(),
+    backgroundColor,
     color,
-    fontWeight,
+    boxShadow,
     borderRadius,
-    boxShadow: stroke,
   }
 }
 
