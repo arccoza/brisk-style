@@ -34,7 +34,7 @@ Theme.prototype.colorAndWeight = function colorAndWeight({shade, accent, weight}
 }
 
 Theme.prototype.parse = function parse(props) {
-  var out = {face: null, fill: null, stroke: null}
+  var out = {face: null, fill: null, stroke: null, outline: null}
   for (var name in out) {
     out[name] = this.colorAndWeight(props[name])
   }
