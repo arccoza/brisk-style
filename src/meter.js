@@ -6,9 +6,9 @@ const box = require('./box.js')
 
 function meter(props) {
   var style = box.call(this, props), {x1=0, x2=1, roundness=0, pad=0} = props
-  var fillWeight = this.strokeWeight[props.fill && props.fill.weight || 2]
-  var faceWeight = this.strokeWeight[props.face && props.face.weight || 2]
-  pad = this.strokeWeight[pad || 0]
+  var fillWeight = this.weight[props.fill && props.fill.weight || 2]
+  var faceWeight = this.weight[props.face && props.face.weight || 2]
+  pad = this.weight[pad || 0]
   style.backgroundImage = bgSvg({rem: this.rem, color:style.color, weight:faceWeight, x1:0, x2:1, r:this.roundness[roundness]})
 
   var more = {
