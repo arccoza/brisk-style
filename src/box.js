@@ -15,8 +15,8 @@ function box({stroke=0, fill=0, face=0, outline=0, elevation=0, roundness=0}={})
   var borderRadius = `${vals.roundness}rem`
 
   return {
-    backgroundColor,
     color,
+    backgroundColor,
     boxShadow,
     borderRadius,
   }
