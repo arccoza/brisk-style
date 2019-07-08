@@ -17,7 +17,7 @@ var th = new Theme()
 
 
 function Button(props={}) {
-  return jsx('div', {css: css(th.button({stroke:{shade:1}, fill:{shade:3}, face: {shade:1, accent:0}, elevation:{shade:2, value:3}, roundness:2}))}, 'hello')
+  return jsx('div', {css: css(th.button({stroke:{color: [2, 2], weight:1}, fill:{color: [2, 3, 1]}, face: {color: [2, 1]}, elevate:3, round:2}))}, 'hello')
 }
 
 function Meter(props={}) {
@@ -35,6 +35,6 @@ function Toggle(props={}) {
 
 
 ReactDOM.render(
-  Toggle(),
+  Button(),
   document.getElementById('root')
 )

@@ -26,9 +26,10 @@ Theme.prototype.shade = function shade({shade, accent}) {
   return accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade]
 }
 
-Theme.prototype.colorAndWeight = function colorAndWeight({shade, accent, weight}) {
+Theme.prototype.colorAndWeight = function colorAndWeight({shade, accent, weight, color}) {
   return {
-    color: accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade],
+    color: color && color[0] && (this.color[color[0]])[color[1] || 1].alpha(color[2] || 1) || (accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade]),
+    // color: accent ? this.accent[Math.abs(shade)] : shade < 0 ? this.canvas[shade * -1] : this.ink[shade],
     weight: this.weight[weight],
   }
 }
@@ -39,8 +40,8 @@ Theme.prototype.parse = function parse(props) {
     out[name] = props[name] && this.colorAndWeight(props[name])
   }
   out.pad = this.weight[props.pad]
-  out.roundness = this.roundness[props.roundness]
-  out.elevation = this.elevation[props.elevation]
+  out.round = this.roundness[props.round]
+  out.elevate = this.elevation[props.elevate]
   return out
 }
 
