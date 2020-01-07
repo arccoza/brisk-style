@@ -35,6 +35,6 @@ function Toggle(props={}) {
 
 
 ReactDOM.render(
-  Button(),
+  Toggle(),
   document.getElementById('root')
 )
