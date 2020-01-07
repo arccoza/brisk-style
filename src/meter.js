@@ -13,7 +13,7 @@ function meter(props) {
 
   var more = {
     position: 'relative',
-    width: '200px',
+    // width: '200px',
     boxSizing: 'border-box',
     backgroundRepeat: 'no-repeat',
     backgroundOrigin: 'content-box',
